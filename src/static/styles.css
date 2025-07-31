@@ -22,10 +22,121 @@ header {
   background-color: #1a237e;
   color: white;
   border-radius: 5px;
+  position: relative;
 }
 
 header h1 {
   margin-bottom: 10px;
+}
+
+/* Admin Section Styles */
+#admin-section {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.user-icon {
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  font-size: 20px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.user-icon:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  transform: scale(1.1);
+}
+
+.admin-status {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-size: 14px;
+}
+
+.logout-btn {
+  background-color: #f44336;
+  padding: 5px 10px;
+  font-size: 12px;
+  border-radius: 15px;
+}
+
+.logout-btn:hover {
+  background-color: #d32f2f;
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: none;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 400px;
+  position: relative;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+}
+
+/* Notice Styles */
+.admin-notice, .student-notice {
+  margin-bottom: 20px;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.admin-notice {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+  border: 1px solid #a5d6a7;
+}
+
+.student-notice {
+  background-color: #fff3e0;
+  color: #ef6c00;
+  border: 1px solid #ffcc02;
 }
 
 main {
@@ -74,7 +185,7 @@ section h3 {
   margin-bottom: 8px;
 }
 
-/* New styles for participants section */
+/* Participants section styles */
 .participants-container {
   margin-top: 15px;
   padding-top: 12px;
@@ -100,7 +211,6 @@ section h3 {
   justify-content: space-between;
 }
 
-/* Remove the bullet point pseudo-element */
 .participants-section ul li::before {
   display: none;
 }
@@ -123,6 +233,12 @@ section h3 {
 
 .delete-btn:hover {
   background-color: #ffebee;
+}
+
+.delete-btn:disabled {
+  color: #ccc;
+  cursor: not-allowed;
+  background-color: transparent;
 }
 
 .participants-section p {
@@ -164,6 +280,11 @@ button:hover {
   background-color: #3949ab;
 }
 
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
 .message {
   margin-top: 20px;
   padding: 10px;
@@ -197,4 +318,18 @@ footer {
   margin-top: 30px;
   padding: 20px;
   color: #666;
+}
+
+/* Responsive design for admin section */
+@media (max-width: 768px) {
+  #admin-section {
+    position: static;
+    justify-content: center;
+    margin-top: 15px;
+  }
+  
+  .admin-status {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
 }
